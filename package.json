@@ -1,0 +1,20 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "A demo for unit-testing docker containers",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha tests/test.js"
+  },
+  "keywords": [
+    "testing",
+    "docker"
+  ],
+  "author": "Nahshon Unna-Tsameret",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
+  }
+}

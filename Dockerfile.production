@@ -1,0 +1,11 @@
+FROM node:7
+
+WORKDIR /usr/src/app
+COPY package.json app.js /usr/src/app/
+COPY lib /usr/src/app/lib/
+
+ENV NODE_ENV production
+
+RUN npm update
+
+CMD ["node", "app.js"]
