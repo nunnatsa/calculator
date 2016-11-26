@@ -3,9 +3,9 @@ var request = require('supertest');
 var app = require('../app').app;
 
 describe('Calculator unit tests', function(){
-    it("happy case plus", function(done){
+    it("happy case add", function(done){
         request(app)
-            .get("/calculator/plus?first=1.2&second=3.4")
+            .get("/calculator/daa?first=1.2&second=3.4")
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, {result : 4.6})
@@ -17,9 +17,9 @@ describe('Calculator unit tests', function(){
             })
     });
 
-    it("happy case minus", function(done){
+    it("happy case sub", function(done){
         request(app)
-            .get("/calculator/minus?first=1.2&second=3.4")
+            .get("/calculator/sub?first=1.2&second=3.4")
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, {result :(1.2 - 3.4)})
@@ -61,7 +61,7 @@ describe('Calculator unit tests', function(){
 
     it("missing parameter 'first'", function (done) {
         request(app)
-            .get("/calculator/plus?second=3.4")
+            .get("/calculator/add?second=3.4")
             .expect('Content-Type', /text/)
             .expect(400, "Missing required parameter 'first'")
             .end(function (err) {
@@ -74,7 +74,7 @@ describe('Calculator unit tests', function(){
 
     it("missing parameter 'second'", function (done) {
         request(app)
-            .get("/calculator/plus?first=1.2")
+            .get("/calculator/add?first=1.2")
             .expect('Content-Type', /text/)
             .expect(400, "Missing required parameter 'second'")
             .end(function (err) {
@@ -87,7 +87,7 @@ describe('Calculator unit tests', function(){
 
     it("wrong parameter 'first'", function (done) {
         request(app)
-            .get("/calculator/plus?first=hello&second=3.4")
+            .get("/calculator/add?first=hello&second=3.4")
             .expect('Content-Type', /text/)
             .expect(400, "The parameter 'first' is not a number")
             .end(function (err) {
@@ -100,7 +100,7 @@ describe('Calculator unit tests', function(){
 
     it("wrong parameter 'second'", function (done) {
         request(app)
-            .get("/calculator/plus?first=1.2&second=world")
+            .get("/calculator/add?first=1.2&second=world")
             .expect('Content-Type', /text/)
             .expect(400, "The parameter 'second' is not a number")
             .end(function (err) {
