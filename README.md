@@ -3,9 +3,9 @@ This is a code example to demonstrate testing within a docker container.
 ##The Calculator Server
 This is a simple server that implement a HTTP calculator, as follows:
 
-```GET /calculator/plus``` - add two floating point numbers.
+```GET /calculator/add``` - add two floating point numbers.
 
-```GET /calculator/minus``` - subtract a floating point number from a second one.
+```GET /calculator/sub``` - subtract a floating point number from a second one.
 
 ```GET /calculator/mul``` - multiple two floating point numbers.
 
