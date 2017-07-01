@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:7'
-    }
-    
-  }
+  agent none
   stages {
     stage('Install') {
       steps {
-        sh 'sudo npm install'
+        sh 'docker build -t calculator -f Dockerfile.production .'
       }
     }
   }
