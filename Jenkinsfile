@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'build -t calculator -f Dockerfile.production .'
+        sh 'npm install'
       }
     }
   }
