@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Run') {
       steps {
-        sh 'node app.js'
+        sh 'npm --version'
       }
     }
   }
