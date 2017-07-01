@@ -1,9 +1,14 @@
 pipeline {
-  agent none
+  agent {
+    dockerfile {
+      filename 'Dockerfile.production'
+    }
+    
+  }
   stages {
     stage('Install') {
       steps {
-        sh 'docker build -t calculator -f Dockerfile.production .'
+        sh 'build -t calculator -f Dockerfile.production .'
       }
     }
   }
