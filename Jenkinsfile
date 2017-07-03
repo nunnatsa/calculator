@@ -11,5 +11,10 @@ pipeline {
         sh 'docker build -t calculator-test -f Dockerfile.test .'
       }
     }
+    stage('Run tests') {
+      steps {
+        sh 'docker run --rm calculator-test'
+      }
+    }
   }
 }
