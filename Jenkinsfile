@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile.production'
-    }
-    
-  }
+  agent any
   stages {
     stage('Check') {
       steps {
