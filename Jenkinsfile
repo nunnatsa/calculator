@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Check') {
       steps {
-        sh 'npm --version'
+        sh 'docker build -t calculator -f Dockerfile.production .'
       }
     }
     stage('Test') {
