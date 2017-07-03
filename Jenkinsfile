@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage('Check') {
       steps {
-        sh 'docker build -t calculator -f Dockerfile.production .'
+        sh 'make prod-image'
       }
     }
     stage('Build test image') {
       steps {
-        sh 'docker build -t calculator-test -f Dockerfile.test .'
+        sh 'make test-image'
       }
     }
     stage('Run tests') {
       steps {
-        sh 'docker run --rm calculator-test'
+        sh 'make test'
       }
     }
   }
