@@ -6,9 +6,9 @@ pipeline {
         sh 'docker build -t calculator -f Dockerfile.production .'
       }
     }
-    stage('Test') {
+    stage('Build test image') {
       steps {
-        sh 'npm test'
+        sh 'docker build -t calculator-test -f Dockerfile.test .'
       }
     }
   }
