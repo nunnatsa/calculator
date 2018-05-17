@@ -1,6 +1,6 @@
 # Calculator
 This is a code example to demonstrate testing within a docker container.
-##The Calculator Server
+## The Calculator Server
 This is a simple server that implement a HTTP calculator, as follows:
 
 ```GET /calculator/add``` - add two floating point numbers.
