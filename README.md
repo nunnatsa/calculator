@@ -13,7 +13,7 @@ This is a simple server that implement a HTTP calculator, as follows:
 
 Each one of these API requires two query parameters: first and second; for example,
 
-```GET /calculator/minus?first=3.4&second=1.4```
+```GET /calculator/sub?first=3.4&second=1.4```
 
 will return a json object of:
 
