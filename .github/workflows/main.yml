@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build image + test image
+      run: |
+        docker build -t calculator -f Dockerfile.production .
+        docker build -t test-calculator Dockerfile.test .
+        docker rmi calculator test-calculator
