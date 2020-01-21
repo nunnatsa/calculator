@@ -12,5 +12,5 @@ jobs:
     - name: Build image + test image
       run: |
         docker build -t calculator -f Dockerfile.production .
-        docker build -t test-calculator Dockerfile.test .
+        docker build -t test-calculator -f Dockerfile.test .
         docker rmi calculator test-calculator
